@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admission Form - Gardenia Grammar School</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #eef6f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+    }
+
+    h1 {
+      background-color: #004080;
+      color: #fff;
+      padding: 20px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      background-color: #d6f0ff;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      font-size: 20px;
+    }
+
+    h3 {
+      background-color: #00bcd4;
+      padding: 10px;
+      border-radius: 10px;
+      color: white;
+      margin-bottom: 20px;
+    }
+
+    form {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="tel"],
+    input[type="file"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .gender-options {
+      margin-top: 10px;
+    }
+
+    .gender-options label {
+      font-weight: normal;
+      margin-right: 20px;
+    }
+
+    .box {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .signature-section p {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px dashed #ccc;
+    }
+
+    .photo-upload {
+      margin-top: 20px;
+    }
+
+    .photo-upload label {
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 12px;
+      background-color: #007acc;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    .success-message,
+    .error-message {
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .success-message {
+      color: green;
+    }
+
+    .error-message {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ADMISSION FORM</h1>
+  <h2>New Campus - Gardenia Grammar High School</h2>
+
+  <!-- ✅ Replace this action with your actual Formspree form endpoint -->
+  <form id="admissionForm" action="https://ghulamshaikh05-ux.github.io/Admission-form-project/ method="POST enctype="multipart/form-data">
+    <h3>Student Information</h3>
+
+    <label for="studentName">Name</label>
+    <input id="studentName" name="studentName" type="text" placeholder="Enter your name" required>
+
+    <label for="fatherName">Father's Name</label>
+    <input id="fatherName" name="fatherName" type="text" required>
+
+    <label for="dob">Date of Birth</label>
+    <input id="dob" name="dob" type="date" required>
+
+    <label>Gender</label>
+    <div class="gender-options">
+      <label><input type="radio" name="gender" value="female" required> Female</label>
+      <label><input type="radio" name="gender" value="male"> Male</label>
+    </div>
+
+    <label for="contactNumber">Contact Number</label>
+    <input id="contactNumber" name="contactNumber" type="tel" required>
+
+    <label for="birthPlace">Place of Birth</label>
+    <input id="birthPlace" name="birthPlace" type="text" required>
+
+    <label for="city">City</label>
+    <input id="city" name="city" type="text" required>
+
+    <label for="district">District</label>
+    <input id="district" name="district" type="text" required>
+
+    <label for="religion">Religion</label>
+    <input id="religion" name="religion" type="text" required>
+
+    <label for="disability">Physical Problem/Disability (if any)</label>
+    <input id="disability" name="disability" type="text">
+
+    <label for="email">Your Email (for confirmation)</label>
+    <input id="email" name="email" type="email" required>
+
+    <div class="box">
+      <h3>Student Undertaking</h3>
+      I, ____________________________, son/daughter of ____________________________, hereby declare that I am seeking admission to __________________ (Course/Class Name) at _______________________________ for the academic year _______.
+
+      <br><br>I undertake the following:
+      <ol>
+        <li>All submitted information is accurate.</li>
+        <li>Providing false information may cancel my admission.</li>
+        <li>I agree to follow the rules and policies.</li>
+        <li>I will maintain regular attendance.</li>
+        <li>I will pay all dues on time.</li>
+      </ol>
+
+      <div class="signature-section">
+        <p>
+          Signature of Student: ____________________<br>
+          Full Name: _____________________________<br>
+          Class/Course: __________________________<br>
+          Date: _______________
+        </p>
+
+        <p>
+          Signature of Parent/Guardian: ____________________<br>
+          Name of Parent/Guardian: ______________________<br>
+          Contact Number: _____________________________
+        </p>
+      </div>
+    </div>
+
+    <div class="photo-upload">
+      <label for="passportPhoto">Upload Passport Size Photo:</label>
+      <input type="file" id="passportPhoto" name="passportPhoto" accept="image/*">
+    </div>
+
+    <button type="submit">Submit Admission Form</button>
+
+    <div class="success-message" id="successMessage">✔️ Your form has been submitted successfully!</div>
+    <div class="error-message" id="errorMessage">❌ There was an error submitting the form. Please try again.</div>
+  </form>
+
+  <script>
+    document.getElementById('admissionForm').addEventListener('submit', function (e) {
+      const form = this;
+
+      // Client-side validation
+      const requiredFields = form.querySelectorAll('[required]');
+      let valid = true;
+
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          valid = false;
+          field.style.borderColor = 'red';
+        } else {
+          field.style.borderColor = '#ccc';
+        }
+      });
+
+      if (!valid) {
+        e.preventDefault();
+        alert('Please fill all required fields correctly.');
+      }
+
+      // Optional: Show success or error after submission via Formspree response handling
+    });
+  </script>
+</body>
+</html>
